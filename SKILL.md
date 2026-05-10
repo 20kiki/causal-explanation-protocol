@@ -1,6 +1,6 @@
 ---
 name: causal-explanation-protocol
-description: Use when explaining causal relationships, justifying why phenomena occur, or answering "why" questions about complex systems. Trigger especially when the system involves feedback loops, path dependence, emergence, equilibrium, or when circular reasoning and false analogies are risks. Also use when the user asks for root-cause analysis or critiques an existing explanation.
+description: Use when explaining causal relationships, answering "why" or "how" questions about phenomena, or justifying how something occurs. Trigger regardless of system complexity — covers everything from simple physical chains to systems with feedback loops, path dependence, emergence, or equilibrium. Also use when the user asks for root-cause analysis or critiques an existing explanation.
 ---
 
 # Universal Causal Explanation Protocol
@@ -13,10 +13,10 @@ Core principle: **Classify first, then explain. Audit the driving force, then bu
 
 ## When to Use
 
-- User asks "Why does X happen?"
+- User asks "Why does X happen?" or "How does X form/occur?" (causal "how" = "why")
 - Explaining a phenomenon's causal mechanism to someone
 - Reviewing or refuting an existing causal explanation
-- System involves feedback loops, path dependence, emergence, or equilibrium
+- System involves feedback loops, path dependence, emergence, or equilibrium — but also trigger for simple physical chains (Mode A exists for a reason)
 - Suspecting circular reasoning or pseudo-analogies in an explanation
 
 ## Pre-Flight Check Layer (Mandatory)

@@ -1,6 +1,6 @@
 ---
 name: causal-explanation-protocol
-description: Use when explaining causal relationships, justifying why phenomena occur, or answering "why" questions about complex systems. Trigger especially when the system involves feedback loops, path dependence, emergence, equilibrium, or when circular reasoning and false analogies are risks. Also use when the user asks for root-cause analysis or critiques an existing explanation.
+description: Use when explaining causal relationships, answering "why" or "how" questions about phenomena, or justifying how something occurs. Trigger regardless of system complexity — covers everything from simple physical chains to systems with feedback loops, path dependence, emergence, or equilibrium. Also use when the user asks for root-cause analysis or critiques an existing explanation.
 ---
 
 # 通用因果解释协议
@@ -13,10 +13,10 @@ description: Use when explaining causal relationships, justifying why phenomena 
 
 ## 使用时机
 
-- 用户问"为什么X会发生？"
+- 用户问"为什么X会发生？"或"X是怎么产生的/形成的/出现的？"（与"为什么X"等价的因果问题）
 - 需要向他人解释某个现象的因果机制
 - 审查或反驳一个已有的因果解释
-- 系统涉及反馈循环、路径依赖、涌现、或均衡状态
+- 系统涉及反馈循环、路径依赖、涌现、或均衡状态 —— 但也适用于简单物理传导链（模式 A 就是为这个而存在的）
 - 怀疑解释中存在循环论证或伪类比
 
 ## 前置检查层（强制执行）
