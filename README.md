@@ -2,6 +2,7 @@
 
 **Language:** [English](README.md) | [简体中文](zh-CN/README.md)
 
+[![GitHub stars](https://img.shields.io/github/stars/20kiki/causal-explanation-protocol?style=social)](https://github.com/20kiki/causal-explanation-protocol/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Platform: Claude Code](https://img.shields.io/badge/Platform-Claude%20Code-orange)](https://claude.ai/code)
 
