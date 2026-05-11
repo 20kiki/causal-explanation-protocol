@@ -150,6 +150,66 @@ The system is jointly defined by two opposing forces. Demand pressure (driven by
 The explanation is anchored to three exogenous constraints, not to a self-referential "supply and demand." It explains why the system *stabilizes* at high prices rather than correcting — the constraints are permanent, not temporary frictions.
 </details>
 
+
 ---
+
+### "Why does wind form?"
+
+<details>
+<summary><b>❌ Without the protocol</b></summary>
+
+> "Wind is caused by pressure differences in the atmosphere. High-pressure air moves toward low-pressure areas, creating wind."
+
+**What's wrong:**
+- Stops at "pressure differences" as if they were the root cause — but pressure differences are themselves caused by something deeper.
+- The driving force is untraced: you can still ask "why are there pressure differences?"
+</details>
+
+<details>
+<summary><b>✅ With the protocol (Mode A: Necessity Transmission)</b></summary>
+
+**Mode classification:** Mode A (Necessity Transmission) — a passive physical system with no feedback loops.
+
+**Driving force audit:**
+The chain is traced until it hits an **independent, external physical boundary** that cannot be questioned further: solar radiation + Earth's spherical geometry + orbital tilt. This is a *passive constraint* — it's not designed, and it's not emergent; it's a fixed boundary condition of the planet.
+
+**Explanation:**
+Solar radiation (independent external energy source) → uneven heating of Earth's surface (equator vs. poles, day vs. night, land vs. sea) → air columns at different temperatures → differential expansion/contraction → density differences → horizontal pressure gradient (high ↔ low) → pressure gradient force pushes air from high to low pressure → wind.
+
+Each step necessarily follows from the previous. Given uneven solar heating + the ideal gas law + fluid continuity, air *must* flow — there is no physical possibility of non-flow.
+
+**Why this is better:**
+The chain is unidirectional and unbranched, terminating at an immutable external boundary (solar radiation). "Pressure difference" is correctly positioned as an intermediate link, not the root cause. And Mode A's rule — "you must reach a conservation law or physical boundary" — forced the explanation past the obvious mid-point.
+</details>
+
+---
+
+### "Why does a database deadlock occur?"
+
+<details>
+<summary><b>❌ Without the protocol</b></summary>
+
+> "Transaction A holds lock 1 and waits for lock 2. Transaction B holds lock 2 and waits for lock 1. Neither can proceed, so they deadlock."
+
+**What's wrong:**
+- Unpacks the cycle step-by-step ("A waits for B, B waits for A...") instead of packaging it. The reader sees *how* the cycle works but doesn't understand *why* the system can't escape it.
+- Doesn't identify the exogenous constraint that makes deadlock a *steady state* rather than a temporary blockage.
+</details>
+
+<details>
+<summary><b>✅ With the protocol (Mode B: Steady-State Equilibrium)</b></summary>
+
+**Mode classification:** Mode B (Steady-State Equilibrium) — the circular wait is a stable attractor. Without external intervention, the system never leaves this state.
+
+**Driving force audit:**
+The exogenous anchor is the database's **lock acquisition rule**: a transaction that cannot acquire a lock *blocks and waits indefinitely* rather than releasing its held locks and retrying. This rule is an *active intent* (design decision) — the database could have been designed differently (e.g., timeout + abort), but it wasn't.
+
+**Explanation:**
+The system is jointly defined by two constraints: (1) each transaction holds its acquired locks until commit, and (2) each transaction waits indefinitely for blocked locks. Together, these form a stable attractor — a state in which both transactions wait forever, with zero internal force capable of breaking the cycle. The deadlock is not a "conflict"; it's an *equilibrium state* the system converges to and cannot escape without external intervention (deadlock detector, timeout, or manual kill).
+
+**Why this is better:**
+Instead of narrating the cycle (unpacking), it packages it as a steady-state module — two rules jointly define an inescapable attractor. The explanation makes clear *why* deadlock is self-sustaining and *what kind* of fix is needed (break one of the two rules — e.g., add timeout → abort → release locks).
+</details>
+
 
 ## Installation
