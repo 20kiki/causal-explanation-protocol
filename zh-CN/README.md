@@ -212,3 +212,46 @@ flowchart TD
 
 
 ## 安装
+
+### Claude Code
+```bash
+cp SKILL.md ~/.claude/skills/causal-explanation-protocol/SKILL.md
+```
+
+### Copilot CLI
+将 `SKILL.md` 放入你的 Copilot CLI skills 目录。
+
+### Gemini CLI
+将 `SKILL.md` 放入你的 Gemini CLI skills 目录。
+
+### 手动 / 其他平台
+完整协议就是一个 Markdown 文件（`SKILL.md`）。直接阅读，或将其作为系统指令提供给任何 LLM。
+
+---
+
+## 为什么是「TDD for Skills」？
+
+本协议以实证方式构建：先让未加载 skill 的 agent 执行因果解释任务，记录其系统性失败（循环论证、错误类比、宏观→微观逆转），再针对性地编写协议修复每个失败点。结果是——协议防御的是*实际观察到的*错误，而非假想的错误。
+
+---
+
+## 项目结构
+
+```
+├── README.md          # 当前文件
+├── SKILL.md           # 完整协议参考（英文）
+├── LICENSE            # MIT
+└── zh-CN/
+    ├── README.md      # 中文说明
+    └── SKILL.md       # 中文协议完整参考
+```
+
+## 标签
+
+`claude-code` `causal-reasoning` `explainability` `skill` `prompt-engineering` `critical-thinking`
+
+---
+
+## 许可证
+
+MIT © 2026
