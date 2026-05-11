@@ -1,18 +1,31 @@
-# Causal Explanation Protocol
+<div align="center">
+  <h1>Causal Explanation Protocol</h1>
+  <p>A structured protocol that makes AI (and humans) produce <b>rigorous causal explanations</b> — no circular reasoning, no false analogies, no pseudo-root-causes.</p>
+
+  [![GitHub stars](https://img.shields.io/github/stars/20kiki/causal-explanation-protocol?style=social)](https://github.com/20kiki/causal-explanation-protocol/stargazers)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+  [![Platform: Claude Code](https://img.shields.io/badge/Platform-Claude%20Code-orange)](https://claude.ai/code)
+</div>
 
 **Language:** [English](README.md) | [简体中文](zh-CN/README.md)
 
-[![GitHub stars](https://img.shields.io/github/stars/20kiki/causal-explanation-protocol?style=social)](https://github.com/20kiki/causal-explanation-protocol/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Platform: Claude Code](https://img.shields.io/badge/Platform-Claude%20Code-orange)](https://claude.ai/code)
+---
 
-A structured protocol that makes AI (and humans) produce **rigorous causal explanations** — no circular reasoning, no false analogies, no pseudo-root-causes.
-
-**Classify first, then explain. Audit the driving force, then build the chain.**
+## 📋 Table of Contents
+- [The Problem](#the-problem)
+- [Before / After](#before--after)
+- [How It Works](#how-it-works)
+- [The Four Modes](#the-four-modes)
+- [Example Walkthroughs](#example-walkthroughs)
+- [Installation](#installation)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## The Problem
+**Classify first, then explain. Audit the driving force, then build the chain.**
+
+## 🔍 The Problem
 
 Ever asked an AI "why does X happen?" and got an answer that *sounds* right but falls apart on inspection?
 
@@ -20,7 +33,7 @@ Ever asked an AI "why does X happen?" and got an answer that *sounds* right but 
 
 This is circular: it uses the congestion wave (macro) to explain why drivers brake (micro), when in reality the causality runs the other way. This protocol catches that.
 
-## Before / After
+## ⚡ Before / After
 
 ### Without the protocol
 > "Stock prices fell because the market panicked. The panic caused more selling, which deepened the panic."
@@ -36,15 +49,13 @@ This is circular: it uses the congestion wave (macro) to explain why drivers bra
 
 [See more examples below](#example-walkthroughs)
 
----
-
-## How It Works
+## 🧠 How It Works
 
 Every explanation runs through a **mandatory pre-flight check** before any reasoning begins:
 
 ### Step 1: Pitfall scan
 | Fallacy | Detection |
-| :------ | :-------- |
+| :--- | :--- |
 | **Circular reasoning** | Does the "cause" need the "effect" to define itself? |
 | **False analogy** | Is the analogy's causal structure actually isomorphic? |
 | **Pseudo root cause** | Can you still ask "why" about the claimed cause? |
@@ -70,24 +81,18 @@ flowchart TD
     Q3 -->|"No"| A["<b>Mode A</b><br/>Necessity Transmission<br/><i>Build unidirectional chain</i>"]
 ```
 
----
-
-## The Four Modes
+## 🗂️ The Four Modes
 
 | Mode | Applies to | Starting cause | Core rule |
-| :--- | :--------- | :------------- | :-------- |
+| :--- | :--- | :--- | :--- |
 | **A: Necessity Transmission** | Passive physical/engineering systems | Independent conservation law or physical boundary | Chain must be unidirectional, unbranched, non-cyclic |
 | **B: Steady-State Equilibrium** | Negative-feedback systems, rule-locked games | Mutually constraining rules (≥1 exogenous) | Package the cycle; don't unpack it step-by-step |
 | **C: Path-Dependent Evolution** | Historical lock-in, initial-condition-sensitive | Bifurcation difference + amplification mechanism | Explain lock-in; don't explain why the specific fork was taken |
 | **D: Emergence & Self-Organization** | Many individuals, simple local rules | Bottom-level individual rules | Enforce micro→macro; never macro→micro |
 
----
-
-## Example Walkthroughs
+## 📖 Example Walkthroughs
 
 Each example shows the **same question** answered two ways: a typical sloppy explanation, and the protocol-corrected version with the specific mistakes it caught.
-
----
 
 ### "Why did the server crash?"
 
@@ -117,8 +122,6 @@ A brief latency spike (e.g. DB slow query) causes the first few client timeouts 
 **Why this is better:**
 The causal arrow is strictly micro→macro. The "overload" doesn't cause retries; each client's retry rule *collectively creates* the overload. And the fix is not "add more servers" (which would also retry) — it's adding jitter and backoff to the retry rule itself.
 </details>
-
----
 
 ### "Why are housing prices so high in major cities?"
 
@@ -150,9 +153,6 @@ The system is jointly defined by two opposing forces. Demand pressure (driven by
 The explanation is anchored to three exogenous constraints, not to a self-referential "supply and demand." It explains why the system *stabilizes* at high prices rather than correcting — the constraints are permanent, not temporary frictions.
 </details>
 
-
----
-
 ### "Why does wind form?"
 
 <details>
@@ -182,8 +182,6 @@ Each step necessarily follows from the previous. Given uneven solar heating + th
 The chain is unidirectional and unbranched, terminating at an immutable external boundary (solar radiation). "Pressure difference" is correctly positioned as an intermediate link, not the root cause. And Mode A's rule — "you must reach a conservation law or physical boundary" — forced the explanation past the obvious mid-point.
 </details>
 
----
-
 ### "Why does a database deadlock occur?"
 
 <details>
@@ -211,8 +209,7 @@ The system is jointly defined by two constraints: (1) each transaction holds its
 Instead of narrating the cycle (unpacking), it packages it as a steady-state module — two rules jointly define an inescapable attractor. The explanation makes clear *why* deadlock is self-sustaining and *what kind* of fix is needed (break one of the two rules — e.g., add timeout → abort → release locks).
 </details>
 
-
-## Installation
+## 📦 Installation
 
 ### Claude Code
 ```bash
@@ -228,22 +225,14 @@ Place `SKILL.md` in your Gemini CLI skills directory.
 ### Manual / Other platforms
 The full protocol is a single Markdown file (`SKILL.md`). Read it directly or feed it as system instructions to any LLM.
 
----
-
-## Why "TDD for Skills"?
-
-This protocol was built empirically: baseline agents were tested on causal explanation tasks *without* the skill. Their systematic failures (circular reasoning, false analogies, macro→micro reversals) were documented, and the protocol was written to address each specific failure pattern. The result is a protocol that defends against *observed* mistakes, not hypothetical ones.
-
----
-
-## Structure
+## 📁 Structure
 
 ```
 ├── README.md          # You are here
 ├── SKILL.md           # Full protocol reference (English)
 ├── LICENSE            # MIT
 └── zh-CN/
-    ├── README.md      # 中文说明
+    ├── README.md      # 简体中文
     └── SKILL.md       # 中文协议完整参考
 ```
 
@@ -251,8 +240,10 @@ This protocol was built empirically: baseline agents were tested on causal expla
 
 `claude-code` `causal-reasoning` `explainability` `skill` `prompt-engineering` `critical-thinking`
 
----
+## 🤝 Contributing
 
-## License
+Contributions welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the protocol improvement process.
+
+## 📄 License
 
 MIT © 2026

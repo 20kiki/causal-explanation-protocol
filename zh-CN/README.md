@@ -1,18 +1,31 @@
-# 通用因果解释协议
+<div align="center">
+  <h1>通用因果解释协议</h1>
+  <p>一个让 AI（和人类）产出<b>严谨因果解释</b>的结构化协议——杜绝循环论证、错误类比、伪根本因。</p>
+
+  [![GitHub stars](https://img.shields.io/github/stars/20kiki/causal-explanation-protocol?style=social)](https://github.com/20kiki/causal-explanation-protocol/stargazers)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
+  [![Platform: Claude Code](https://img.shields.io/badge/Platform-Claude%20Code-orange)](https://claude.ai/code)
+</div>
 
 **Language:** [English](../README.md) | [简体中文](README.md)
 
-[![GitHub stars](https://img.shields.io/github/stars/20kiki/causal-explanation-protocol?style=social)](https://github.com/20kiki/causal-explanation-protocol/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
-[![Platform: Claude Code](https://img.shields.io/badge/Platform-Claude%20Code-orange)](https://claude.ai/code)
+---
 
-一个让 AI（和人类）产出**严谨因果解释**的结构化协议——杜绝循环论证、错误类比、伪根本因。
-
-**先分类，再解释。先审计驱动力，再构建链条。**
+## 📋 目录
+- [它能解决什么](#它能解决什么)
+- [使用效果对比](#使用效果对比)
+- [工作流程](#工作流程)
+- [四种模式速览](#四种模式速览)
+- [案例详解](#案例详解)
+- [安装](#安装)
+- [贡献指南](#贡献指南)
+- [许可证](#许可证)
 
 ---
 
-## 它解决什么问题
+**先分类，再解释。先审计驱动力，再构建链条。**
+
+## 🔍 它能解决什么
 
 有没有遇到过这种情况：你问 AI "为什么 X 会发生"，得到的答案*听起来*有道理，但仔细一想就站不住脚？
 
@@ -20,7 +33,7 @@
 
 这是循环论证：用拥堵波（宏观）来解释司机减速（微观），而实际上因果方向是反的。本协议专门捕捉这类错误。
 
-## Before / After（使用效果对比）
+## ⚡ 使用效果对比
 
 ### 不使用协议
 > "股价下跌是因为市场恐慌了。恐慌导致更多人抛售，抛售又加剧了恐慌。"
@@ -36,15 +49,13 @@
 
 [更多案例见下方](#案例详解)
 
----
-
-## 工作流程
+## 🧠 工作流程
 
 每个解释在开始推理之前，都必须通过**前置检查**：
 
 ### 第一步：陷阱识别
 | 谬误类型 | 检测问题 |
-| :------- | :------- |
+| :--- | :--- |
 | **循环论证** | "因"是否需要"果"来定义自身？ |
 | **错误类比** | 类比的因果结构是否真正同构？ |
 | **伪根本因** | 声称的"因"还能继续追问"为什么"吗？ |
@@ -70,24 +81,18 @@ flowchart TD
     Q3 -->|"否"| A["<b>模式 A</b><br/>必然传导链<br/><i>构建单向无分支链条</i>"]
 ```
 
----
-
-## 四种模式速览
+## 🗂️ 四种模式速览
 
 | 模式 | 适用对象 | 起始因 | 核心约束 |
-| :--- | :------- | :----- | :------- |
+| :--- | :--- | :--- | :--- |
 | **A: 必然传导链** | 被动物理/工程系统 | 独立守恒律或物理边界 | 链条单向、无分支、非循环 |
 | **B: 稳态博弈链** | 负反馈系统、规则锁定的博弈 | 相互制衡的规则（≥1 个外生） | 打包循环，禁止逐段解包 |
 | **C: 路径依赖链** | 历史锁定、初始条件敏感 | 分叉差异 + 正反馈放大机制 | 解释锁定，不解释为何选中特定分叉 |
 | **D: 涌现自组织链** | 大量个体、简单规则 | 底层个体规则 | 强制微观→宏观，禁止反向 |
 
----
-
-## 案例详解
+## 📖 案例详解
 
 每个案例展示**同一个问题**的两种回答：一个典型的糟糕解释，以及协议修正后的版本——并标注协议具体捕捉到了什么错误。
-
----
 
 ### "服务器为什么会崩？"
 
@@ -118,8 +123,6 @@ flowchart TD
 因果箭头严格从微观指向宏观。"过载"不导致重试；每个客户端的重试规则*集体构成了*过载。而且修复方案不是"加服务器"（加了也一样重试）——而是在重试规则中引入 jitter 和退避。
 </details>
 
----
-
 ### "一线城市房价为什么这么高？"
 
 <details>
@@ -148,9 +151,6 @@ flowchart TD
 **为什么更好：**
 解释锚定在三个外生约束上，而非自我指涉的"供需关系"。它解释了为什么系统*稳定在*高价位而非自我修正——约束是永久性的，不是临时摩擦。
 </details>
-
-
----
 
 ### "风是怎么产生的？"
 
@@ -181,8 +181,6 @@ flowchart TD
 链条单向无分支，终止于不可变的外部边界（太阳辐射）。"气压差"被正确定位为中间环节而非根本因。模式 A 的规则——"必须追到守恒律或物理边界"——迫使解释越过显而易见的中点继续向下追溯。
 </details>
 
----
-
 ### "数据库为什么会发生死锁？"
 
 <details>
@@ -210,8 +208,7 @@ flowchart TD
 不是叙述循环（解包），而是打包为稳态模块——两条规则共同定义了一个不可逃脱的吸引子。解释明确了死锁*为何自我维持*，以及需要*哪一类*修复（打破两条规则之一——例如：加超时 → 中止 → 释放锁）。
 </details>
 
-
-## 安装
+## 📦 安装
 
 ### Claude Code
 ```bash
@@ -227,15 +224,7 @@ cp SKILL.md ~/.claude/skills/causal-explanation-protocol/SKILL.md
 ### 手动 / 其他平台
 完整协议就是一个 Markdown 文件（`SKILL.md`）。直接阅读，或将其作为系统指令提供给任何 LLM。
 
----
-
-## 为什么是「TDD for Skills」？
-
-本协议以实证方式构建：先让未加载 skill 的 agent 执行因果解释任务，记录其系统性失败（循环论证、错误类比、宏观→微观逆转），再针对性地编写协议修复每个失败点。结果是——协议防御的是*实际观察到的*错误，而非假想的错误。
-
----
-
-## 项目结构
+## 📁 项目结构
 
 ```
 ├── README.md          # 当前文件
@@ -250,8 +239,10 @@ cp SKILL.md ~/.claude/skills/causal-explanation-protocol/SKILL.md
 
 `claude-code` `causal-reasoning` `explainability` `skill` `prompt-engineering` `critical-thinking`
 
----
+## 🤝 贡献指南
 
-## 许可证
+欢迎贡献。协议改进流程详见 [CONTRIBUTING.md](../CONTRIBUTING.md)。
+
+## 📄 许可证
 
 MIT © 2026
