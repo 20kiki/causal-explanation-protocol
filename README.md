@@ -44,7 +44,7 @@ Every explanation runs through a **mandatory pre-flight check** before any reaso
 
 ### Step 1: Pitfall scan
 | Fallacy | Detection |
-|---------|-----------|
+| :------ | :-------- |
 | **Circular reasoning** | Does the "cause" need the "effect" to define itself? |
 | **False analogy** | Is the analogy's causal structure actually isomorphic? |
 | **Pseudo root cause** | Can you still ask "why" about the claimed cause? |
@@ -75,7 +75,7 @@ flowchart TD
 ## The Four Modes
 
 | Mode | Applies to | Starting cause | Core rule |
-|------|-----------|----------------|-----------|
+| :--- | :--------- | :------------- | :-------- |
 | **A: Necessity Transmission** | Passive physical/engineering systems | Independent conservation law or physical boundary | Chain must be unidirectional, unbranched, non-cyclic |
 | **B: Steady-State Equilibrium** | Negative-feedback systems, rule-locked games | Mutually constraining rules (≥1 exogenous) | Package the cycle; don't unpack it step-by-step |
 | **C: Path-Dependent Evolution** | Historical lock-in, initial-condition-sensitive | Bifurcation difference + amplification mechanism | Explain lock-in; don't explain why the specific fork was taken |

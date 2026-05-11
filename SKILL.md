@@ -28,7 +28,7 @@ Must execute both steps before building any explanation. **Do not skip.**
 Scan the explanation space for the following fallacies:
 
 | Fallacy Type | Detection Question | Red Flag |
-|-------------|-------------------|----------|
+| :----------- | :----------------- | :------- |
 | Circular reasoning | Does the "cause" need the "effect" to define itself? | Two variables define each other |
 | False analogy | Is the analogy's causal structure isomorphic to the target system? | Superficial similarity, different mechanism |
 | Pseudo root cause | Does the claimed "cause" itself have a deeper driving force? | "Why" can be asked indefinitely |
@@ -116,7 +116,7 @@ Rule set {X, Y} defines steady state Z → mathematically/physically Z is the un
 **Critical boundary to maintain**:
 
 | What to explain (necessity) | What NOT to explain (contingency) |
-|---------------------------|----------------------------------|
+| :-------------------------- | :-------------------------------- |
 | Once on a given trajectory, why it's hard to turn back and outcome C becomes inevitable | Why B was selected rather than A at the fork |
 
 **Explanatory form**:
@@ -155,7 +155,7 @@ All individuals independently follow rule R → collective behavior mathematical
 ## Common Mistakes (from empirical testing)
 
 | Mistake | Correct approach |
-|---------|-----------------|
+| :------ | :-------------- |
 | Skipping pre-flight checks and jumping straight to explanation | Must execute pitfall identification + driving force audit first; cannot be skipped |
 | Explaining without classifying | Must use the decision tree to determine the mode, then build the explanation using the corresponding template |
 | Unpacking the cycle in Mode B instead of packaging it | Stop defending each step sequentially. Find the exogenous anchor + constraining relationship; package as a steady-state module |
@@ -166,7 +166,7 @@ All individuals independently follow rule R → collective behavior mathematical
 ## Quick Reference
 
 | Phenomenon | Mode | Starting cause form | Core operation |
-|-----------|------|-------------------|----------------|
+| :--------- | :--- | :----------------- | :------------- |
 | No feedback, passive physical process | A: Necessity Transmission | Independent physical boundary / conservation law | Build unidirectional, unbranched chain |
 | Negative feedback, steady-state maintenance | B: Steady-State Equilibrium | Mutually constraining rule set (with exogenous anchor) | Package cycle as steady-state module |
 | Positive feedback, historical lock-in | C: Path-Dependent Evolution | Bifurcation difference + amplification mechanism | Separate contingency (don't explain) from necessity (explain) |
@@ -188,7 +188,7 @@ and only discusses causal mechanisms internal to that layer, without cross-layer
 **Why this is necessary**:
 
 | Same symptom: "service unavailable" | Scoped layer | Corresponding mode |
-|-------------------------------------|-------------|-------------------|
+| :----------------------------------- | :---------- | :----------------- |
 | Fiber cut | Physical | A: Necessity Transmission (signal loss → link down → route unreachable) |
 | Network partition; CP system under CAP rejects writes | Protocol | B: Steady-State Equilibrium (consistency vs. availability constrain each other; Paxos/Raft maintains steady state with quorum) |
 | Deadlock (two transactions each waiting for the other's lock) | Kernel / Application | B: Steady-State Equilibrium (circular lock-wait as "attractor"; never resolves without external intervention) |
