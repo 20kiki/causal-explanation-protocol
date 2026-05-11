@@ -85,76 +85,71 @@ flowchart TD
 
 ## Example Walkthroughs
 
+Each example shows the **same question** answered two ways: a typical sloppy explanation, and the protocol-corrected version with the specific mistakes it caught.
+
+---
+
+### "Why did the server crash?"
+
 <details>
-<summary><b>Why does a traffic jam form on a highway?</b></summary>
+<summary><b>❌ Without the protocol</b></summary>
 
-**Classification:** Mode D (Emergence & Self-Organization)
+> "Traffic surged and overloaded the server. The overload caused timeouts, which made the server unresponsive."
 
-**Driving force audit:**
-Each driver follows a simple rule — maintain safe following distance from the car ahead. This is a *passive constraint* (human reaction time + braking physics).
-
-**Explanation:**
-A single driver brakes slightly → the car behind brakes slightly harder (reaction delay) → this braking amplifies as it propagates backward → a "phantom jam" wave travels upstream at ~20 km/h → no central coordinator, no accident needed.
-
-**Why this is rigorous:**
-The causal arrow is strictly micro→macro. The jam wave does *not* cause drivers to brake; individual braking decisions *collectively form* the jam wave.
+**What's wrong:**
+- "Overload" is a redescription of the symptom, not a cause — why did traffic become a problem *this time*?
+- Treats a potentially emergent failure (retry storm) as if it were a simple capacity problem (Mode A), which is a category error.
 </details>
 
 <details>
-<summary><b>Why are most keyboards QWERTY?</b></summary>
+<summary><b>✅ With the protocol (Mode D + Layered Scoping)</b></summary>
 
-**Classification:** Mode C (Path-Dependent Evolution)
+**Layer scoping:** Application layer. We are not explaining physical fiber cuts or kernel deadlocks.
+
+**Mode classification:** Mode D (Emergence & Self-Organization)
 
 **Driving force audit:**
-The bifurcation was a contingent historical choice (1870s, typewriter-era layout). The lock-in mechanism is network effects + retraining costs.
+Each client follows a timeout-retry rule (exogenous, config-defined). When the server responds slowly, clients retry. This rule is a *passive constraint* — the client doesn't decide whether to retry; the config does.
 
 **Explanation:**
-QWERTY was selected for mechanical reasons in the typewriter era (contingent — we don't explain *why QWERTY won*). Once a critical mass of typists learned QWERTY, switching costs created a positive feedback loop: more QWERTY typists → more QWERTY keyboards manufactured → more QWERTY training → harder to displace. The system is locked in even though superior layouts exist.
+A brief latency spike (e.g. DB slow query) causes the first few client timeouts → those clients retry, doubling request load → more timeouts → more retries → a retry storm emerges from the independent decisions of many clients following the same rule → no central coordinator, no attacker.
+
+**Why this is better:**
+The causal arrow is strictly micro→macro. The "overload" doesn't cause retries; each client's retry rule *collectively creates* the overload. And the fix is not "add more servers" (which would also retry) — it's adding jitter and backoff to the retry rule itself.
+</details>
+
+---
+
+### "Why are housing prices so high in major cities?"
+
+<details>
+<summary><b>❌ Without the protocol</b></summary>
+
+> "Housing prices are high because demand exceeds supply. High demand drives up prices, which signals more supply, but supply can't keep up, so prices stay high."
+
+**What's wrong:**
+- "Demand exceeds supply" is circular — it restates the observation (high price) as its own cause.
+- "Supply can't keep up" is a pseudo-root-cause — *why* can't it keep up? The explanation never reaches an exogenous anchor.
+</details>
+
+<details>
+<summary><b>✅ With the protocol (Mode B: Steady-State Equilibrium)</b></summary>
+
+**Mode classification:** Mode B (Steady-State Equilibrium) — the housing market is a system with mutually constraining forces.
+
+**Driving force audit:**
+Three exogenous anchors:
+1. **Land is non-reproducible** (passive physical constraint — you can't manufacture more land in a fixed location)
+2. **Zoning regulations** (active intent — policy decisions that cap density)
+3. **Population inflow** (emergent regularity — job concentration draws people to cities)
+
+**Explanation:**
+The system is jointly defined by two opposing forces. Demand pressure (driven by population inflow + job concentration) pushes prices upward. Land scarcity + zoning caps (exogenous constraints) limit the supply response. Their intersection is a high-price steady state. Whenever demand rises, price increases until it rations the constrained supply — the system is a stable attractor at a high price level, not a temporary imbalance.
+
+**Why this is better:**
+The explanation is anchored to three exogenous constraints, not to a self-referential "supply and demand." It explains why the system *stabilizes* at high prices rather than correcting — the constraints are permanent, not temporary frictions.
 </details>
 
 ---
 
 ## Installation
-
-### Claude Code
-```bash
-cp SKILL.md ~/.claude/skills/causal-explanation-protocol/SKILL.md
-```
-
-### Copilot CLI
-Place `SKILL.md` in your Copilot CLI skills directory.
-
-### Gemini CLI
-Place `SKILL.md` in your Gemini CLI skills directory.
-
-### Manual / Other platforms
-The full protocol is a single Markdown file (`SKILL.md`). Read it directly or feed it as system instructions to any LLM.
-
----
-
-## Why "TDD for Skills"?
-
-This protocol was built empirically: baseline agents were tested on causal explanation tasks *without* the skill. Their systematic failures (circular reasoning, false analogies, macro→micro reversals) were documented, and the protocol was written to address each specific failure pattern. The result is a protocol that defends against *observed* mistakes, not hypothetical ones.
-
----
-
-## Structure
-
-```
-├── README.md          # You are here
-├── SKILL.md           # Full protocol reference (English)
-├── LICENSE            # MIT
-└── zh-CN/
-    ├── README.md      # 中文说明
-    └── SKILL.md       # 中文协议完整参考
-```
-
-## Topics
-
-`claude-code` `causal-reasoning` `explainability` `skill` `prompt-engineering` `critical-thinking`
-
----
-
-## License
-
-MIT © 2026
