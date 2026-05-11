@@ -213,3 +213,46 @@ Instead of narrating the cycle (unpacking), it packages it as a steady-state mod
 
 
 ## Installation
+
+### Claude Code
+```bash
+cp SKILL.md ~/.claude/skills/causal-explanation-protocol/SKILL.md
+```
+
+### Copilot CLI
+Place `SKILL.md` in your Copilot CLI skills directory.
+
+### Gemini CLI
+Place `SKILL.md` in your Gemini CLI skills directory.
+
+### Manual / Other platforms
+The full protocol is a single Markdown file (`SKILL.md`). Read it directly or feed it as system instructions to any LLM.
+
+---
+
+## Why "TDD for Skills"?
+
+This protocol was built empirically: baseline agents were tested on causal explanation tasks *without* the skill. Their systematic failures (circular reasoning, false analogies, macro→micro reversals) were documented, and the protocol was written to address each specific failure pattern. The result is a protocol that defends against *observed* mistakes, not hypothetical ones.
+
+---
+
+## Structure
+
+```
+├── README.md          # You are here
+├── SKILL.md           # Full protocol reference (English)
+├── LICENSE            # MIT
+└── zh-CN/
+    ├── README.md      # 中文说明
+    └── SKILL.md       # 中文协议完整参考
+```
+
+## Topics
+
+`claude-code` `causal-reasoning` `explainability` `skill` `prompt-engineering` `critical-thinking`
+
+---
+
+## License
+
+MIT © 2026
