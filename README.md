@@ -49,7 +49,7 @@ Ever asked an AI "why does X happen?" and got an answer that *sounds* right but 
 >
 > ✅ The explanation packages the cycle as a steady-state module, anchored to the thermostat rule (exogenous). It doesn't unpack "heater → warm → off → cool → heater → warm..." in a circle.
 
-[See more examples below](#example-walkthroughs)
+[See more examples below](#-example-walkthroughs)
 
 ## 🧠 How It Works
 
