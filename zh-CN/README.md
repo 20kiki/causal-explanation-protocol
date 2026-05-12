@@ -215,6 +215,8 @@ flowchart TD
 git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
 ```
 
+就这一步。Claude Code 会自动发现 `~/.claude/skills/` 下的 skill，协议即刻生效。触发方式：在任何对话中提出「为什么」「怎么解释」类的问题。
+
 ## 📦 安装
 
 ### Claude Code

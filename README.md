@@ -216,6 +216,8 @@ Instead of narrating the cycle (unpacking), it packages it as a steady-state mod
 git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
 ```
 
+That's it. Claude Code auto-discovers skills in `~/.claude/skills/` — the protocol is immediately available. Trigger it by asking "why" or "explain" questions about any system.
+
 ## 📦 Installation
 
 ### Claude Code
