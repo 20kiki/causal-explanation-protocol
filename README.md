@@ -12,15 +12,15 @@
 ---
 
 ## 📋 Table of Contents
-- [The Problem](#the-problem)
-- [Before / After](#before--after)
-- [How It Works](#how-it-works)
-- [The Four Modes](#the-four-modes)
-- [Example Walkthroughs](#example-walkthroughs)
-- [Quick Start](#quick-start)
-- [Installation](#installation)
-- [Contributing](#contributing)
-- [License](#license)
+- [The Problem](#-the-problem)
+- [Before / After](#-before--after)
+- [How It Works](#-how-it-works)
+- [The Four Modes](#-the-four-modes)
+- [Example Walkthroughs](#-example-walkthroughs)
+- [Quick Start](#-quick-start)
+- [Installation](#-installation)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
