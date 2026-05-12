@@ -17,6 +17,7 @@
 - [工作流程](#工作流程)
 - [四种模式速览](#四种模式速览)
 - [案例详解](#案例详解)
+- [快速开始](#快速开始)
 - [安装](#安装)
 - [贡献指南](#贡献指南)
 - [许可证](#许可证)
@@ -208,11 +209,17 @@ flowchart TD
 不是叙述循环（解包），而是打包为稳态模块——两条规则共同定义了一个不可逃脱的吸引子。解释明确了死锁*为何自我维持*，以及需要*哪一类*修复（打破两条规则之一——例如：加超时 → 中止 → 释放锁）。
 </details>
 
+## 🚀 快速开始
+
+```bash
+git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
+```
+
 ## 📦 安装
 
 ### Claude Code
 ```bash
-cp SKILL.md ~/.claude/skills/causal-explanation-protocol/SKILL.md
+git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
 ```
 
 ### Copilot CLI

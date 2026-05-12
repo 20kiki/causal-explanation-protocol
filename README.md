@@ -17,6 +17,7 @@
 - [How It Works](#how-it-works)
 - [The Four Modes](#the-four-modes)
 - [Example Walkthroughs](#example-walkthroughs)
+- [Quick Start](#quick-start)
 - [Installation](#installation)
 - [Contributing](#contributing)
 - [License](#license)
@@ -209,11 +210,17 @@ The system is jointly defined by two constraints: (1) each transaction holds its
 Instead of narrating the cycle (unpacking), it packages it as a steady-state module — two rules jointly define an inescapable attractor. The explanation makes clear *why* deadlock is self-sustaining and *what kind* of fix is needed (break one of the two rules — e.g., add timeout → abort → release locks).
 </details>
 
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
+```
+
 ## 📦 Installation
 
 ### Claude Code
 ```bash
-cp SKILL.md ~/.claude/skills/causal-explanation-protocol/SKILL.md
+git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
 ```
 
 ### Copilot CLI
