@@ -30,23 +30,23 @@
 
 Ever asked an AI "why does X happen?" and got an answer that *sounds* right but falls apart on inspection?
 
-> *"Traffic jams happen because traffic density exceeds road capacity, causing a congestion wave that forces drivers to slow down..."*
+> *"Why does this sleeping pill work? Because it has a sedative effect."*
 
-This is circular: it uses the congestion wave (macro) to explain why drivers brake (micro), when in reality the causality runs the other way. This protocol catches that.
+"Sedative effect" is just a fancy way of saying "makes you sleepy." The cause renames the effect — there's no real explanation. This protocol catches that.
 
 ## ⚡ Before / After
 
 ### Without the protocol
-> "Stock prices fell because the market panicked. The panic caused more selling, which deepened the panic."
+> *"Why does the room stay at 22°C? Because that's the temperature."*
 >
-> ❌ Circular — "panic" defines itself through selling, and selling defines itself through panic.
+> ❌ Circular — just renames the observation.
 
 ### With the protocol (Mode B: Steady-State Equilibrium)
-> **Driving force audit:** Traders follow a stop-loss rule (exogenous constraint). When price drops below a threshold, rule dictates immediate sell.
+> **Driving force audit:** The thermostat is set to 22°C (exogenous rule — someone chose it). When temperature drops below, it triggers the heater. When temperature rises above, it triggers the AC.
 >
-> **Steady state:** Price discovery normally balances buyers and sellers. A price shock below the stop-loss threshold triggers rule-driven selling, which pushes price further down, triggering more stop-losses. The system has a cascading attractor — once broken below the stop-loss cluster, it necessarily accelerates until all triggered orders clear.
+> **Steady state:** The thermostat + heater + AC form a negative-feedback loop. Heat leaks out, heater pushes back, AC cuts excess. The system bounces around 22°C — never perfectly still, but always returning. The setpoint is the attractor. Once you know the thermostat rule + heat loss rate + heater power, the behavior is locked in.
 >
-> ✅ The explanation is anchored to an exogenous constraint (stop-loss rule), not to a self-referential "mood."
+> ✅ The explanation packages the cycle as a steady-state module, anchored to the thermostat rule (exogenous). It doesn't unpack "heater → warm → off → cool → heater → warm..." in a circle.
 
 [See more examples below](#example-walkthroughs)
 
