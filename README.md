@@ -212,11 +212,22 @@ Instead of narrating the cycle (unpacking), it packages it as a steady-state mod
 
 ## 🚀 Quick Start
 
+> **What you need:** `git` installed on your computer. If `git --version` works in terminal, you're ready.
+
+**Step 1 — Open terminal**
+- **Windows:** Press `Win + R`, type `powershell`, press Enter
+- **macOS:** Press `Cmd + Space`, type `terminal`, press Enter
+- **Linux:** You already know 😄
+
+**Step 2 — Copy and run this command** (it doesn't matter which folder you're in):
+
 ```bash
 git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
 ```
 
-That's it. Claude Code auto-discovers skills in `~/.claude/skills/` — the protocol is immediately available. Trigger it by asking "why" or "explain" questions about any system.
+**Step 3 — Done.** The skill is installed. Open Claude Code and ask any "why" or "what caused" question — the protocol kicks in automatically.
+
+> This command downloads the project (a few KB of text files) into Claude Code's skills folder. Run `git pull` in that folder anytime to update.
 
 ## 📦 Installation
 

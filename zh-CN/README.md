@@ -211,11 +211,22 @@ flowchart TD
 
 ## 🚀 快速开始
 
+> **前置条件：** 电脑上已安装 `git`。在终端输入 `git --version` 能正常输出版本号即可。
+
+**第一步 — 打开终端**
+- **Windows：** 按 `Win + R`，输入 `powershell`，回车
+- **macOS：** 按 `Cmd + 空格`，输入 `terminal`，回车
+- **Linux：** 你懂的 😄
+
+**第二步 — 复制下面这条命令，粘贴到终端里回车**（在哪个目录下执行都可以）：
+
 ```bash
 git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
 ```
 
-就这一步。Claude Code 会自动发现 `~/.claude/skills/` 下的 skill，协议即刻生效。触发方式：在任何对话中提出「为什么」「怎么解释」类的问题。
+**第三步 — 完成。** skill 已安装。打开 Claude Code，提出任何「为什么」「是什么原因导致」类的问题，协议会自动介入。
+
+> 这条命令会把项目文件（几 KB 的纯文本）下载到 Claude Code 的 skills 文件夹。以后想更新，在 skills 文件夹下执行 `git pull` 即可。
 
 ## 📦 安装
 
