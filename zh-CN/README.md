@@ -212,28 +212,34 @@ flowchart TD
 
 ## 🚀 快速开始
 
-> **前置条件：** 电脑上已安装 `git`。在终端输入 `git --version` 能正常输出版本号即可。
+这个 skill 就一个文件 —— `SKILL.md`。无需构建，无依赖。
 
 **第一步 — 打开终端**
 - **macOS / Linux：** 打开终端（Terminal）
 - **Windows：** 按 `Win + R`，输入 `powershell`，回车
 
-**第二步 — 复制下面这条命令，粘贴到终端里回车**（在哪个目录下执行都可以）：
+**第二步 — 创建目录并下载 SKILL.md**
 
+macOS / Linux：
 ```bash
-git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
+mkdir -p ~/.claude/skills/causal-explanation-protocol
+curl -o ~/.claude/skills/causal-explanation-protocol/SKILL.md https://raw.githubusercontent.com/20kiki/causal-explanation-protocol/master/SKILL.md
 ```
 
-**第三步 — 完成。** skill 已安装。打开 Claude Code，提出任何「为什么」「是什么原因导致」类的问题，协议会自动介入。
+Windows（PowerShell）：
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills\causal-explanation-protocol"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/20kiki/causal-explanation-protocol/master/SKILL.md" -OutFile "$env:USERPROFILE\.claude\skills\causal-explanation-protocol\SKILL.md"
+```
 
-> 这条命令会把项目文件（几 KB 的纯文本）下载到 Claude Code 的 skills 文件夹。以后想更新，在 skills 文件夹下执行 `git pull` 即可。
+**第三步 — 完成。** 打开 Claude Code，提出任何「为什么」「是什么原因导致」类的问题，协议会自动介入。
+
+> 以后想更新：重新执行同样的命令，覆盖旧文件即可。
 
 ## 📦 安装
 
 ### Claude Code
-```bash
-git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
-```
+把 `SKILL.md` 放到 `~/.claude/skills/causal-explanation-protocol/` 下即可。详见[快速开始](#-快速开始)。
 
 ### Copilot CLI
 将 `SKILL.md` 放入你的 Copilot CLI skills 目录。

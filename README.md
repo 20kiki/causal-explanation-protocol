@@ -213,28 +213,34 @@ Instead of narrating the cycle (unpacking), it packages it as a steady-state mod
 
 ## 🚀 Quick Start
 
-> **What you need:** `git` installed on your computer. If `git --version` works in terminal, you're ready.
+The skill is a single file — `SKILL.md`. There's nothing to build, no dependencies.
 
 **Step 1 — Open terminal**
 - **macOS / Linux:** Open Terminal
 - **Windows:** Press `Win + R`, type `powershell`, press Enter
 
-**Step 2 — Copy and run this command** (it doesn't matter which folder you're in):
+**Step 2 — Create the folder and download SKILL.md**
 
+macOS / Linux:
 ```bash
-git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
+mkdir -p ~/.claude/skills/causal-explanation-protocol
+curl -o ~/.claude/skills/causal-explanation-protocol/SKILL.md https://raw.githubusercontent.com/20kiki/causal-explanation-protocol/master/SKILL.md
 ```
 
-**Step 3 — Done.** The skill is installed. Open Claude Code and ask any "why" or "what caused" question — the protocol kicks in automatically.
+Windows (PowerShell):
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills\causal-explanation-protocol"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/20kiki/causal-explanation-protocol/master/SKILL.md" -OutFile "$env:USERPROFILE\.claude\skills\causal-explanation-protocol\SKILL.md"
+```
 
-> This command downloads the project (a few KB of text files) into Claude Code's skills folder. Run `git pull` in that folder anytime to update.
+**Step 3 — Done.** Open Claude Code and ask any "why" or "what caused" question — the protocol kicks in automatically.
+
+> To update later: re-run the same command. It overwrites the old file.
 
 ## 📦 Installation
 
 ### Claude Code
-```bash
-git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/skills/causal-explanation-protocol
-```
+Drop `SKILL.md` into `~/.claude/skills/causal-explanation-protocol/`. See [Quick Start](#-quick-start) for the one-liner.
 
 ### Copilot CLI
 Place `SKILL.md` in your Copilot CLI skills directory.
