@@ -19,6 +19,7 @@
 - [案例详解](#-案例详解)
 - [快速开始](#-快速开始)
 - [安装](#-安装)
+- [标签](#标签)
 - [贡献指南](#-贡献指南)
 - [许可证](#-许可证)
 
@@ -256,7 +257,7 @@ git clone https://github.com/20kiki/causal-explanation-protocol.git ~/.claude/sk
 
 ## 标签
 
-`claude-code` `causal-reasoning` `explainability` `skill` `prompt-engineering` `critical-thinking`
+[`claude-code`](https://github.com/topics/claude-code) [`causal-reasoning`](https://github.com/topics/causal-reasoning) [`explainability`](https://github.com/topics/explainability) [`skill`](https://github.com/topics/skill) [`prompt-engineering`](https://github.com/topics/prompt-engineering) [`critical-thinking`](https://github.com/topics/critical-thinking)
 
 ## 🤝 贡献指南
 

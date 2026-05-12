@@ -19,6 +19,7 @@
 - [Example Walkthroughs](#-example-walkthroughs)
 - [Quick Start](#-quick-start)
 - [Installation](#-installation)
+- [Topics](#topics)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -257,7 +258,7 @@ The full protocol is a single Markdown file (`SKILL.md`). Read it directly or fe
 
 ## Topics
 
-`claude-code` `causal-reasoning` `explainability` `skill` `prompt-engineering` `critical-thinking`
+[`claude-code`](https://github.com/topics/claude-code) [`causal-reasoning`](https://github.com/topics/causal-reasoning) [`explainability`](https://github.com/topics/explainability) [`skill`](https://github.com/topics/skill) [`prompt-engineering`](https://github.com/topics/prompt-engineering) [`critical-thinking`](https://github.com/topics/critical-thinking)
 
 ## 🤝 Contributing
 
