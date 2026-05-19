@@ -2,9 +2,9 @@
   <h1>Causal Explanation Protocol</h1>
   <p>A structured protocol that makes AI (and humans) produce <b>rigorous causal explanations</b> — no circular reasoning, no false analogies, no pseudo-root-causes.</p>
 
-  [![GitHub stars](https://img.shields.io/github/stars/20kiki/causal-explanation-protocol?style=social)](https://github.com/20kiki/causal-explanation-protocol/stargazers)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-  [![Platform: Claude Code](https://img.shields.io/badge/Platform-Claude%20Code-orange)](https://claude.ai/code)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+  [![Platform](https://img.shields.io/badge/Platform-Claude%20Code-blue)](https://code.claude.com)
+  [![Stars](https://img.shields.io/github/stars/20kiki/causal-explanation-protocol)](https://github.com/20kiki/causal-explanation-protocol)
 </div>
 
 **Language:** [English](README.md) | [简体中文](zh-CN/README.md)
